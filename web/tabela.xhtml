@@ -13,10 +13,18 @@
 
         <h:form>
             <p:dataTable var="data" value="#{cartasBean.cartasdao.list}" resizableColumns="true">
+                <f:facet name="exporter">
+                    <h:commandLink>
+                        <p:graphicImage name="" />
+                        <p:dataExporter type="pdf" target="data" fileName="Cartas"/>
+                    </h:commandLink>
+                    
+                </f:facet>
+                
                 <f:facet name="header"> 
                     Cartas
                 </f:facet>
-
+                    
                 <p:column headerText="ID" width="7%">
                     #{data.id}
                 </p:column>    
@@ -24,7 +32,7 @@
                 <p:column headerText="Remetente" width="14.5%" >
                     #{data.remetente}
                 </p:column>
-                
+                    
                 <p:column headerText="Destinatário" width="14.5%">
                     #{data.destinatario}
                 </p:column>
@@ -59,4 +67,3 @@
 
     </h:body>
 </html>
-

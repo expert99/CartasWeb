@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+   <ui:decorate template="template.xhtml"/>
+    
+    
+    <h:body>
+        
+        <center>
+            
+            <h2>Carta Simples</h2>
+            <h:form id="corpo">
+            <h:panelGrid columns="2">
+                
+                <p:outputLabel value="Remetente"  for="remetente"/>
+                <p:inputText id="remetente" required="true" value="#{cartasBean.cartas.remetente}"  />
+                
+                <p:outputLabel value="Destinatário" for="destinatario"/>
+                <p:inputText id="destinatario" required="true" value="#{cartasBean.cartas.destinatario}" />
+                
+                <p:outputLabel value="Data" for="data"/>
+                <p:calendar id="data" required="true" value="#{cartasBean.cartas.data}" />
+                
+                <p:outputLabel value="CEP" for="cep"/>
+                <p:inputText id="cep" required="true" value="#{cartasBean.cartas.cep}"/>
+                
+                
+            </h:panelGrid>
+                <br/>
+                <p:commandButton value="Cadastrar" action="#{cartasBean.addCarta()}" update="corpo" style="margin-left: 100px"/>
+            
+        </h:form>
+        </center>
+       
+    </h:body>
+</html>
+

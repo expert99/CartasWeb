@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:decorate template="template.xhtml"/>
+
+    <h:body>
+
+        <h:form>
+            <p:dataTable var="data" value="#{cartasBean.cartasdao.list}" resizableColumns="true">
+                <f:facet name="header"> 
+                    Cartas
+                </f:facet>
+
+                <p:column headerText="ID" width="7%">
+                    #{data.id}
+                </p:column>    
+                    
+                <p:column headerText="Remetente" width="14.5%" >
+                    #{data.remetente}
+                </p:column>
+                
+                <p:column headerText="Destinatário" width="14.5%">
+                    #{data.destinatario}
+                </p:column>
+                
+                <p:column headerText="Tipo">
+                    #{data.carta}
+                </p:column>
+                 
+                <p:column headerText="Rastreio" width="14.5%">
+                    <h:outputLink value="http://www.linkcorreios.com.br/?id=#{data.codigo}" target="blank">#{data.codigo}</h:outputLink>
+                </p:column>
+                
+                <p:column headerText="CEP">
+                    #{data.cep}
+                </p:column>
+                
+                <p:column headerText="Data">
+                    #{data.data}
+                </p:column>
+                
+                <p:column headerText="Valor">
+                    #{data.preco}
+                </p:column>
+                
+                <p:column headerText="Ação">
+                    <p:commandLink value="Atualizar" action="#{cartasBean.carregar(data)}"/>
+                </p:column>
+                
+            </p:dataTable>
+        </h:form>
+
+
+    </h:body>
+</html>
+

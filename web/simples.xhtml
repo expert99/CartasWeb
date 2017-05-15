@@ -28,6 +28,8 @@
                 <p:outputLabel value="CEP" for="cep"/>
                 <p:inputText id="cep" required="true" value="#{cartasBean.cartas.cep}"/>
                 
+                <p:outputLabel value="Valor(R$)" for="valor"/>
+                <p:inputNumber id="valor" value="#{cartasBean.cartas.preco}" minValue="0" maxValue="9999.99"/>
                 
             </h:panelGrid>
                 <br/>

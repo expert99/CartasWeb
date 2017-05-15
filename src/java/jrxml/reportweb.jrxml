@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportweb" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96e70b53-0518-44eb-90bf-0e548b78a7ae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from cartas order by id desc;
+]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="departamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="destinatario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="carta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situação" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CEP" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="remetente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="preco" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="46" height="20" uuid="eb7789f8-7aca-45b6-b807-72faba2d59d4"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="0" width="151" height="20" uuid="92f0109d-8bea-4e24-a772-90b45546cf8b"/>
+				<text><![CDATA[remetente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="0" width="153" height="20" uuid="947a9265-c164-449d-a220-6e0f75c54555"/>
+				<text><![CDATA[destinatario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="100" height="20" uuid="8a092719-b64e-40cc-827d-37d65a8d8c29"/>
+				<text><![CDATA[carta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="20" uuid="654d3211-014b-4a38-8cf4-c9896cbed6bb"/>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="550" y="0" width="100" height="20" uuid="ca7dcae9-f7fc-4f88-ae15-066e0b2bb34a"/>
+				<text><![CDATA[CEP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="0" width="75" height="20" uuid="12545b35-4bb8-4c1c-bd2f-7278887da542"/>
+				<text><![CDATA[data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="730" y="0" width="72" height="20" uuid="20c2b968-0773-4b76-a560-0c55584468fb"/>
+				<text><![CDATA[preco]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="46" height="20" uuid="8ec7d751-38e3-4f9e-aac2-c03fa53f4694"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="0" width="151" height="20" uuid="a89afe1e-143d-42b4-8eda-55d14598c8af"/>
+				<textFieldExpression><![CDATA[$F{remetente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="153" height="20" uuid="74d7510d-dca4-4771-b301-4828bb3e64b3"/>
+				<textFieldExpression><![CDATA[$F{destinatario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="100" height="20" uuid="74f32202-3730-4ceb-9adc-b5e3f32cec38"/>
+				<textFieldExpression><![CDATA[$F{carta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="20" uuid="bf65b066-8603-4ded-9319-34249025ed6f"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="0" width="100" height="20" uuid="eefe2085-83e9-4b60-aff9-db19a1770cb6"/>
+				<textFieldExpression><![CDATA[$F{CEP}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yy">
+				<reportElement x="650" y="0" width="80" height="20" uuid="71aef55c-2891-4c61-aaac-63475f7ee6c8"/>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="72" height="20" uuid="a1e37930-fe74-40f7-b315-c6be21f6fba5"/>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="129" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

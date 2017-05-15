@@ -94,7 +94,7 @@ public class CartasDAO {
             sessao.close();
             
         } catch (Exception e) {
-            
+            JOptionPane.showMessageDialog(null, e);
         }
         
     }

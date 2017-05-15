@@ -12,14 +12,8 @@
     <h:body>
 
         <h:form>
-            <p:dataTable var="data" value="#{cartasBean.cartasdao.list}" resizableColumns="true">
-                <f:facet name="exporter">
-                    <h:commandLink>
-                        <p:graphicImage name="" />
-                        <p:dataExporter type="pdf" target="data" fileName="Cartas"/>
-                    </h:commandLink>
-                    
-                </f:facet>
+            <p:dataTable var="data" value="#{cartasBean.cartasdao.list}" resizableColumns="true" scrollable="true" scrollHeight="300">
+                
                 
                 <f:facet name="header"> 
                     Cartas
@@ -60,10 +54,13 @@
                 <p:column headerText="Ação">
                     <p:commandLink value="Atualizar" action="#{cartasBean.carregar(data)}"/>
                 </p:column>
-                
+                                   
             </p:dataTable>
+            
         </h:form>
 
-
+                    
+        
+        
     </h:body>
 </html>

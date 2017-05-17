@@ -10,51 +10,56 @@
     <ui:decorate template="template.xhtml"/>
 
     <h:body>
-
+        
+        
         <h:form>
-            <p:dataTable var="data" value="#{cartasBean.cartasdao.list}" resizableColumns="true" scrollable="true" scrollHeight="300">
+            <p:dataTable var="data" id="data" value="#{cartasBean.cartasdao.list}" resizableColumns="true" rows="5" 
+                         paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} 
+                         {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15,30,50,100" >
                 
                 
                 <f:facet name="header"> 
                     Cartas
                 </f:facet>
-                    
-                <p:column headerText="ID" width="7%">
+                
+                
+                <p:column headerText="ID" filterBy="#{data.id}">
                     #{data.id}
                 </p:column>    
                     
-                <p:column headerText="Remetente" width="14.5%" >
+                <p:column headerText="Remetente" width="14.5%" filterBy="#{data.remetente}">
                     #{data.remetente}
                 </p:column>
                     
-                <p:column headerText="Destinatário" width="14.5%">
+                <p:column headerText="Destinatário" width="14.5%" filterBy="#{data.destinatario}">
                     #{data.destinatario}
                 </p:column>
                 
-                <p:column headerText="Tipo">
+                <p:column headerText="Tipo" filterBy="#{data.carta}">
                     #{data.carta}
                 </p:column>
                  
-                <p:column headerText="Rastreio" width="14.5%">
-                    <h:outputLink value="http://www.linkcorreios.com.br/?id=#{data.codigo}" target="blank">#{data.codigo}</h:outputLink>
+                <p:column headerText="Rastreio" width="14.5%" filterBy="#{data.codigo}">
+                    <h:outputLink value="http://www.linkcorreios.com.br/?id=#{data.codigo}" 
+                                  target="blank">#{data.codigo}</h:outputLink>
                 </p:column>
                 
-                <p:column headerText="CEP">
+                <p:column headerText="CEP" filterBy="#{data.cep}">
                     #{data.cep}
                 </p:column>
                 
-                <p:column headerText="Data">
+                <p:column headerText="Data" filterBy="#{data.data}">
                     #{data.data}
                 </p:column>
                 
-                <p:column headerText="Valor">
+                <p:column headerText="Valor" filterBy="#{data.preco}">
                     #{data.preco}
                 </p:column>
                 
                 <p:column headerText="Ação">
                     <p:commandLink value="Atualizar" action="#{cartasBean.carregar(data)}"/>
                 </p:column>
-                                   
+                                  
             </p:dataTable>
             
         </h:form>

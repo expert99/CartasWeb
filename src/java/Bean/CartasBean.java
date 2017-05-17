@@ -10,8 +10,6 @@ import Entidade.Cartas;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -26,7 +24,6 @@ public class CartasBean implements Serializable {
      */
     private Cartas cartas = new Cartas();
     private CartasDAO cartasdao = new CartasDAO();
-    private List<Cartas> list = new ArrayList<Cartas>();
     private boolean sedex;
     private boolean registrada;
     
@@ -101,7 +98,11 @@ public class CartasBean implements Serializable {
         this.cartasdao = cartasdao;
     }
     
-   
+    public String pegarID(){
+        
+        cartas.getId();
+        return "procurar";
+    }
     
     
 }

@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Bean.CartasBean;
 import Entidade.Cartas;
 import Util.Util;
 import java.util.ArrayList;
@@ -49,6 +50,10 @@ public class CartasDAO {
         
     }
     
+    
+    
+    
+    //Add usuário
     public void getData(Cartas c){
         
         try {

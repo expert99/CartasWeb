@@ -10,15 +10,17 @@
     <h:body style="background: url('Resources/bg.jpg') no-repeat; width: 1300px; margin: auto auto 0px auto;
             background-size: auto auto">
         
+        
+        
         <h:form id="form">
             <p:menubar>
             
-            <p:menuitem value="Página Principal" action="index.jsf"  />
-            <p:submenu label="Adicionar Cartas" >
+                <p:menuitem value="Página Principal" action="bemvindo.jsf"/>
+                <p:submenu label="Adicionar Cartas">
                 <p:menuitem  value="Carta Simples" action="simples.jsp" />
                 <p:menuitem value="Registrada e Sedex" action="registrada-sedex.jsp" />
-            </p:submenu>
-            <p:menuitem value="Tabela" action="tabela.jsf" update="form"/>
+                </p:submenu>
+                <p:menuitem value="Tabela" action="tabela.jsf" update="form"/>
             
         </p:menubar>
         </h:form>

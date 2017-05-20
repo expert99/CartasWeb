@@ -21,7 +21,10 @@
                 <f:facet name="header"> 
                     Cartas
                 </f:facet>
-                
+                <f:facet name="footer">
+                    <h:commandButton action="#{cartasBean.gerarRelatorio()}" onclick="this.form.target='_blank'"
+                                     style="background:url('Resources/pdfico.png') no-repeat; margin-left: 1240px " value="   " title="Gerar Relatório"/>
+                </f:facet>
                 
                 <p:column headerText="ID" filterBy="#{data.id}">
                     #{data.id}

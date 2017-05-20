@@ -5,15 +5,42 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
-    <ui:decorate template="template.xhtml"></ui:decorate>
-
+    <h:head>
+        <title>Gerenciador de Cartas</title>
+    </h:head> 
     
-    <h:body>
+    <h:body style="background: url('Resources/bg.jpg') no-repeat; width: 1300px; margin: auto auto 0px auto;
+            background-size: auto auto">
         
-        <center style="margin-top: 100px">
-            <h1>Bem Vindo ao Gerenciador de Cartas PMI</h1>
+         <center>
+             
+            <p:graphicImage value="Resources/logo.png" style="margin-top: 10px"/>
+            <h:form style="margin-left: 1100px"><p:clock pattern="HH:mm:ss dd.MM.yyyy"/></h:form>
+            
+            <hr/>
+        
+        <h:form>
+            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+            
+            
+            <h1>Insira as Credenciais</h1>
+            <h:panelGrid columns="2">
+                
+                <p:outputLabel value="Usuário" for="usuario"/>
+                <p:inputText id="usuario" value="#{cartasBean.usuario}" required="true"/>
+                
+                <p:outputLabel value="Senha" for="senha"/>
+                <p:password id="senha" value="#{cartasBean.senha}" required="true"/>
+                
+                <h:inputHidden/>
+                <p:commandButton value="Login" action="#{cartasBean.login}" update="growl"/>
+                
+            </h:panelGrid>
+            
+        </h:form>
         </center>
-        
     </h:body>
+    
+    
 </html>
 

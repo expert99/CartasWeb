@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+   
+     
+    <ui:decorate template="template.xhtml"></ui:decorate>
+
+    
+    <h:body>
+        
+        <center style="margin-top: 100px">
+            <h1>Bem Vindo ao Gerenciador de Cartas PMI</h1>
+        </center>
+        
+        <p:notificationBar position="bottom" effect="slide" widgetVar="bar" styleClass="bottom">
+            <h:outputLink value="https://portal.conam.com.br/rhitirapina/" target="_blank">Acessar Holerite</h:outputLink>
+        </p:notificationBar>
+        <h:form style="margin-top: 170px; margin-left: -35px">
+            <p:commandButton  onclick="PF('bar').show()" type="button" icon="ui-icon-arrow-1-n" title="Abrir"/>
+            <br/>
+            <p:commandButton onclick="PF('bar').hide()" type="button" icon="ui-icon-arrow-1-s" title="Fechar"/>
+        </h:form>
+        
+        
+    
+    
+   
+    </h:body>
+</html>
+

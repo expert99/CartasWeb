@@ -7,9 +7,20 @@ package Bean;
 
 import DAO.CartasDAO;
 import Entidade.Cartas;
+import Report.Relatorio;
+import com.sun.xml.registry.common.ConnectionFactoryFactory;
+import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.annotation.ManagedBean;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.xml.registry.ConnectionFactory;
+import org.primefaces.context.RequestContext;
+
 
 /**
  *
@@ -17,6 +28,7 @@ import java.io.Serializable;
  */
 @Named(value = "cartasBean")
 @SessionScoped
+@ManagedBean
 public class CartasBean implements Serializable {
 
     /**
@@ -26,10 +38,58 @@ public class CartasBean implements Serializable {
     private CartasDAO cartasdao = new CartasDAO();
     private boolean sedex;
     private boolean registrada;
+    private String usuario, senha;
+    
+    
     
     public CartasBean() {
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String login(){
+            
+        RequestContext context = RequestContext.getCurrentInstance();
+        FacesMessage message = null;
+        boolean login = false;
+        
+        if(senha.equals("cartas") && usuario.equals("prefeitura") && senha != null && usuario !=null){
+            
+            login = true;
+            
+            this.setUsuario(null);
+            this.setSenha(null);
+            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Erro de Login", "");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+            context.addCallbackParam("login", login);
+            return "bemvindo";
+            
+            
+        }else{
+            
+            login = false;
+            message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Erro de Login", "");
+            return null;
+        }
+            
+            
+    }
+        
+    
     public boolean isSedex() {
         return sedex;
     }
@@ -102,6 +162,15 @@ public class CartasBean implements Serializable {
         
         cartas.getId();
         return "procurar";
+    }
+    
+    
+    //Relatorio
+    
+    public void gerarRelatorio(){
+        
+        Relatorio r = new Relatorio();
+        r.getRelatorio();
     }
     
     

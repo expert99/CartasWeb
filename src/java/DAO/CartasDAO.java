@@ -40,6 +40,7 @@ public class CartasDAO {
             Query q = sessao.createQuery("from Cartas order by id desc");
             list = q.list();
             trans.commit();
+            sessao.close();
             return list;
             
         } catch (Exception e) {
